@@ -8,6 +8,6 @@ export default {
   bgColor: '#fff',
 
   globalMargin: {
-    marginHorizontal: 20
-  }
-}
+    marginHorizontal: 20,
+  },
+};

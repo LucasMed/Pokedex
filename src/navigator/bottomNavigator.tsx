@@ -1,12 +1,12 @@
 import React from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import GuessThePokemon from '../screens/GuessThePokemon/GuessThePokemon';
 
-import { TabSearchNavigator } from './SearchNavigator';
-import { TabPokedexNavigator } from './PokedexNavigator';
-import { TouchableOpacity } from 'react-native';
+import {TabSearchNavigator} from './SearchNavigator';
+import {TabPokedexNavigator} from './PokedexNavigator';
+import {TouchableOpacity} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
@@ -22,10 +22,10 @@ const BottomTabs = () => {
         activeBackgroundColor: 'rgba(000,000,000,0.1)',
         labelStyle: {
           width: 60,
-          fontSize: 15
+          fontSize: 15,
         },
         tabStyle: {
-          borderRadius: 30
+          borderRadius: 30,
         },
         style: {
           position: 'absolute',
@@ -36,36 +36,29 @@ const BottomTabs = () => {
           marginHorizontal: 20,
           borderRadius: 30,
           borderTopWidth: 0,
-        }
-      }}
-    >
+        },
+      }}>
       <Tab.Screen
         options={{
           tabBarLabel: 'Pokedex',
-          tabBarIcon: ({ color }) => (
-            <Icon
-              color={color}
-              size={20}
-              name='list-outline'
-            />
+          tabBarIcon: ({color}) => (
+            <Icon color={color} size={20} name="list-outline" />
           ),
         }}
         name="HomeScreen"
-        component={TabPokedexNavigator} />
+        component={TabPokedexNavigator}
+      />
       <Tab.Screen
         options={{
           tabBarLabel: 'Search',
-          tabBarIcon: ({ color }) => (
-            <Icon
-              color={color}
-              size={20}
-              name='search'
-            />
-          )
+          tabBarIcon: ({color}) => (
+            <Icon color={color} size={20} name="search" />
+          ),
         }}
         name="SearchScreen"
-        component={TabSearchNavigator} />
-        {/* <Tab.Screen
+        component={TabSearchNavigator}
+      />
+      {/* <Tab.Screen
         options={{
           tabBarLabel: 'Game',
           tabBarIcon: ({ color }) => (
@@ -80,6 +73,6 @@ const BottomTabs = () => {
         component={GuessThePokemon} /> */}
     </Tab.Navigator>
   );
-}
+};
 
 export default BottomTabs;

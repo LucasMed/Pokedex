@@ -1,8 +1,8 @@
-import { StyleSheet } from 'react-native';
+import {StyleSheet} from 'react-native';
 import useDimensions from '../../hooks/useDimensions';
 import appTheme from '../../theme/appTheme';
 
-const { height, width } = useDimensions();
+const {height, width} = useDimensions();
 
 export const styles = StyleSheet.create({
   cardContainer: {
@@ -42,17 +42,17 @@ export const styles = StyleSheet.create({
   type: {
     fontSize: 15,
     color: appTheme.light,
-    
+
     marginBottom: 5,
     paddingVertical: 2,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   pokebolaContainer: {
     width: 120,
     height: 120,
     position: 'absolute',
     right: 0,
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   pokebola: {
     height: 170,

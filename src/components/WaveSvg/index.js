@@ -1,17 +1,30 @@
 import React, {useEffect} from 'react';
-import { StyleSheet, View, Text, Dimensions, Image, Animated } from 'react-native';
-import { useAnimation } from '../../hooks/useAnimation';
+import {
+  StyleSheet,
+  View,
+  Text,
+  Dimensions,
+  Image,
+  Animated,
+} from 'react-native';
+import {useAnimation} from '../../hooks/useAnimation';
 import appTheme from '../../theme/appTheme';
-import { capitalize } from '../../utils';
+import {capitalize} from '../../utils';
 import PokebolaImage from '../PokebolaImage/PokebolaImage';
 import WavyHeader from './WavyHeader';
 
-export default function WaveScreen({ urlPicture, bgColor, pokemonName, pokemonId, pokemonType }) {
-  const { opacity, position, fadeIn, startMovingPosition } = useAnimation();
+export default function WaveScreen({
+  urlPicture,
+  bgColor,
+  pokemonName,
+  pokemonId,
+  pokemonType,
+}) {
+  const {opacity, position, fadeIn, startMovingPosition} = useAnimation();
   useEffect(() => {
     startMovingPosition(-100, 300);
     fadeIn(800);
-  }, [])
+  }, []);
   return (
     <View>
       <WavyHeader
@@ -31,7 +44,11 @@ export default function WaveScreen({ urlPicture, bgColor, pokemonName, pokemonId
           numberOfLines={1}
           style={styles.pokemonId}>{`#${pokemonId}`}</Text>
       </View>
-      <Animated.View style={[pokemonType.length > 1 && styles.row, {opacity, top: 75, marginLeft: 20}]}>
+      <Animated.View
+        style={[
+          pokemonType.length > 1 && styles.row,
+          {opacity, top: 75, marginLeft: 20},
+        ]}>
         {pokemonType.map(type => (
           <View key={type} style={{...styles.typeLabelContainer}}>
             <Text style={styles.typeLabel}>{capitalize(type)}</Text>
@@ -111,9 +128,9 @@ const styles = StyleSheet.create({
     color: appTheme.light,
     fontSize: 16,
     width: 60,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   row: {
-    flexDirection: 'row'
-  }
+    flexDirection: 'row',
+  },
 });
